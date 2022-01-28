@@ -1,0 +1,118 @@
+:root {
+    --bg_grey: #333;
+    --bg_hover: #444;
+    --red: #b90415;
+    --red_light: #d3071b;
+    --light: #f4f4f4;
+    --blue: #103063;
+    --blue_light: #143f85;
+    --size: 40px 70px;
+    ;
+}
+
+
+/* BASICS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    /* font-family: "PT"; */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
+/* SHOWCASE   */
+
+#showcase {
+    position: relative;
+    background-image: url(./img/1st.jpeg);
+    height: 100vh;
+    /* filter: brightness(30%); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* #showcase::before {
+    content: "";
+    display: block;
+    width: 15%;
+    height: 60%;
+    position: absolute;
+    filter: brightness(200%);
+    left: 30%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+} */
+
+
+/* NAV */
+
+.nav_flex {
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    background-color: var(--bg_grey);
+}
+
+.nav_flex ul {
+    display: flex;
+}
+
+li {
+    margin: 5px 20px;
+    list-style: none;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: var(--light);
+    padding: 5 15px;
+}
+
+.nav_flex a:hover {
+    transition: ease-in-out;
+}
+
+.nav_flex a:hover::after {
+    content: "";
+    display: table;
+    width: 70px;
+    height: 48px;
+    background-color: var(--bg_hover);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: 0px;
+    z-index: -1;
+}
+
+.text_centered {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30%;
+    color: var(--light);
+}
