@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 :root {
     --bg_grey: #333;
     --bg_hover: #444;
@@ -7,28 +8,43 @@
     --blue: #103063;
     --blue_light: #143f85;
     --size: 40px 70px;
-    ;
 }
-
 
 /* BASICS */
 
-* {
+*, body,
+html {
+    font-family: "PT Sans", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-body,
-html {
-    /* font-family: "PT"; */
     line-height: 1.6;
 }
 
-.container {
+
+body {
+    font-size: 1.3rem;
+}
+
+
+/*FONTS*/
+h1, h2, h3, h4, h5 {
+    padding: .4em .3em;
+}
+
+h1 {
+    font-size: 4rem;
+    padding: .2rem 0;
+}
+
+.container, .text_centered {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 auto;
+padding: 10px 20px}
+
+.bg_dark {
+    background-color: var(--bg_grey);
+    height: 100%;
 }
 
 .flex {
@@ -36,6 +52,36 @@ html {
     align-items: center;
     justify-content: center;
     height: 100%;
+    text-align: center;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+}
+
+
+/*BUTTONS*/
+.btn {
+    display: inline-block;
+    background-color: var(--red);
+    font-size: 1rem;
+    color: white;
+    padding: 1em;
+    margin: 1.3em;
+    border: none;
+}
+
+.btn:hover {
+    background-color: var(--red_light);
+}
+
+.bg_light .btn {
+    background-color: var(--blue);
+}
+
+.bg_light .btn:hover {
+    background-color: var(--blue_light);
 }
 
 
@@ -45,32 +91,15 @@ html {
     position: relative;
     background-image: url(./img/1st.jpeg);
     height: 100vh;
-    /* filter: brightness(30%); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-
-/* #showcase::before {
-    content: "";
-    display: block;
-    width: 15%;
-    height: 60%;
-    position: absolute;
-    filter: brightness(200%);
-    left: 30%;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-} */
-
-
 /* NAV */
 
 .nav_flex {
-    height: 40px;
+    height: 1.7em;
     width: 100%;
     position: fixed;
     background-color: var(--bg_grey);
@@ -81,7 +110,8 @@ html {
 }
 
 li {
-    margin: 5px 20px;
+    font-size: 1rem;
+    margin: .5em 1.2em;
     list-style: none;
 }
 
@@ -89,7 +119,7 @@ a {
     position: relative;
     text-decoration: none;
     color: var(--light);
-    padding: 5 15px;
+    padding: .5em .9em;
 }
 
 .nav_flex a:hover {
@@ -99,20 +129,95 @@ a {
 .nav_flex a:hover::after {
     content: "";
     display: table;
-    width: 70px;
-    height: 48px;
+    width: 6em;
+    height: 3em;
     background-color: var(--bg_hover);
     position: absolute;
-    left: 0;
+    left: -.3em;
     right: 0;
     top: -10px;
-    bottom: 0px;
+    bottom: 0;
     z-index: -1;
 }
 
+.hover_sm a:hover::after {
+    left: -.8em;
+}
+
 .text_centered {
+    min-width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 18%;
+    color: var(--light);
+    text-align: center;
+}
+
+/*SECTION I*/
+.music {
+    color: white;
+    max-height: 140vh;
+}
+
+.flex_music {
     display: flex;
     flex-direction: column;
-    padding-top: 30%;
-    color: var(--light);
+    min-width: 60%;
+}
+
+
+
+/*SECTION II*/
+.entertainment {
+    background-image: url("./img/section-bg.jpeg");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 2rem 0;
+    height: 40vh;
+    color: white;
+}
+
+/*SECTION III*/
+
+.text {
+    text-align: left;
+}
+
+.card a, .card a:visited {
+    padding-left: 25px;
+    position: relative;
+    cursor: pointer;
+    color: #103063;
+}
+
+.small {
+    position: absolute;
+    margin: 5px;
+    padding-right: 10px;
+}
+
+/*MOBILE*/
+@media (max-width: 580px) {
+    body{font-size: 1rem;}
+    #showcase {
+        height: 50vh;
+    }
+
+    .text_centered {
+        min-width: 90%;
+    }
+
+    .text_centered p {
+        display: none;
+    }
+h1{
+    font-size: 3rem;
+}
+.card .flex{
+    flex-direction: column;
+}
 }
