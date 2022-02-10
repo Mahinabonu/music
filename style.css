@@ -163,7 +163,7 @@ a {
 .music {
     color: white;
     max-height: 150vh;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .flex_music {
@@ -180,7 +180,8 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 2rem 0;
-    height: 40vh;
+    height: 60vh;
+    max-height: fit-content;
     color: white;
 }
 
@@ -259,11 +260,21 @@ footer {
 
 
 /*MOBILE*/
-@media (max-width: 850px) {
+@media screen and (max-width: 850px) {
+    .music{
+        max-height: fit-content;
+
+    }
     .img_2 {
         max-width: 70%;
-        height: auto;
+        height: 70%;
     }
+    .entertainment{
+        padding: 20px 15px;
+        font-size: 14px;
+        height: fit-content;
+    }
+
 }
 
 @media (max-width: 580px) {
@@ -273,13 +284,13 @@ footer {
 
     #showcase {
         height: 50vh;
+        overflow: hidden;
     }
 
     .text_centered {
         min-width: 90%;
     }
-
-    .text_centered p {
+    .information, .text_centered p {
         display: none;
     }
 
@@ -289,5 +300,16 @@ footer {
 
     .card .flex {
         flex-direction: column;
+    }
+
+
+}
+@media screen and (max-height: 520px) {
+#showcase p{
+    display: none;
+}
+    #showcase{overflow: hidden;}
+    .music{
+        height: 100%;
     }
 }
