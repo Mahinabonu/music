@@ -102,7 +102,8 @@ h1 {
 /* NAV */
 
 .nav_flex {
-    height: 1.7em;
+    display: flex;
+    height: 1.8em;
     width: 100%;
     position: fixed;
     background-color: var(--bg_grey);
@@ -124,7 +125,10 @@ a {
     color: var(--light);
     padding: .5em .9em;
 }
-
+.logo a{
+    top: 0;
+    font-size: 1rem;
+}
 .nav_flex a:hover {
     transition: ease-in-out;
 }
@@ -277,6 +281,106 @@ footer {
 
 }
 
+@media (max-width: 610px){
+
+    /*MENU BTN*/
+    .resp{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+    .menu-btn {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+    }
+
+    .menu-btn span {
+        width: 20px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        /*transform: translate(-50%, -50%);*/
+        background-color: white;
+        transition: all 0.5s;
+        overflow: visible;
+    }
+
+    .menu-btn span:nth-of-type(2) {
+        top: calc(50% - 5px);
+    }
+
+    .menu-btn span:nth-of-type(3) {
+        top: calc(50% + 5px);
+    }
+
+    .menu {
+        position: fixed;
+        top: -10px;
+        right: 0;
+        padding: 15px;
+        transform: translateX(100%);
+        transition: transform 0.5s;
+        width: 100%;
+        height: 50vh;
+        background-color: black;
+    }
+
+    .menu.active {
+        transform: translateX(0);
+    }
+
+    /*BEFORE/AFTER*/
+    .nav_flex a:hover::after {
+        width: 7em;
+        height: 3.1em;
+        background-color: var(--bg_hover);
+        position: absolute;
+        left: -5px;
+        right: 0;
+        top: 0;
+        bottom: 5px;
+
+    }
+
+    .hover_sm a:hover::after {
+        left: -1.3em;
+    }
+
+    /* Меняем гамбургер иконку, когда меню открыто */
+    .menu-btn.active span:nth-of-type(1) {
+        display: none;
+    }
+
+    .menu-btn.active span:nth-of-type(2) {
+        top: 50%;
+        transform: translate(50%, 0%) rotate(45deg);
+    }
+
+    .menu-btn.active span:nth-of-type(3) {
+        top: 50%;
+        transform: translate(50%, 0%) rotate(-45deg);
+    }
+
+    .menu_list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .menu_list li{
+        font-size: 12px;
+        font-weight: 300;
+        text-transform: uppercase;
+        padding-top: 10px;
+    }
+
+  }
 @media (max-width: 580px) {
     body {
         font-size: 1rem;
