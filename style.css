@@ -129,27 +129,24 @@ a {
     top: 0;
     font-size: 1rem;
 }
-.nav_flex a:hover {
+.nav_flex a:hover  {
     transition: ease-in-out;
 }
 
 .nav_flex a:hover::after {
     content: "";
     display: table;
-    width: 6em;
-    height: 3em;
+    width: 100%;
+    height: 115%;
     background-color: var(--bg_hover);
     position: absolute;
-    left: -.3em;
+    left: 0;
     right: 0;
-    top: -10px;
+    top: -5px;
     bottom: 0;
     z-index: -1;
 }
 
-.hover_sm a:hover::after {
-    left: -.8em;
-}
 
 .text_centered {
     min-width: 70%;
@@ -189,10 +186,6 @@ a {
     color: white;
 }
 
-/*.img_2{*/
-/*max-height: 100%;*/
-/*}*/
-
 
 /*SECTION III*/
 
@@ -226,10 +219,6 @@ a {
     padding: 5px;
 }
 
-/*.shop{*/
-/*    font-size: 10px;*/
-/*}*/
-
 .shop h3 {
     font-weight: 300;
     font-size: 1.2rem;
@@ -237,10 +226,6 @@ a {
     border-bottom: #444 solid 1px;
     margin-bottom: 1rem;
 }
-
-/*.shop ul {*/
-/*    background-color: #b90415;*/
-/*}*/
 
 .shop li {
     text-align: left;
@@ -336,22 +321,17 @@ footer {
 
     /*BEFORE/AFTER*/
     .nav_flex a:hover::after {
-        width: 7em;
-        height: 3.1em;
+        width: 100%;
+        height: 100%;
         background-color: var(--bg_hover);
         position: absolute;
-        left: -5px;
+        left: 0;
         right: 0;
         top: 0;
-        bottom: 5px;
 
     }
 
-    .hover_sm a:hover::after {
-        left: -1.3em;
-    }
-
-    /* Меняем гамбургер иконку, когда меню открыто */
+        /* Меняем гамбургер иконку, когда меню открыто */
     .menu-btn.active span:nth-of-type(1) {
         display: none;
     }
