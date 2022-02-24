@@ -278,7 +278,7 @@ footer {
     .menu-btn {
         width: 30px;
         height: 30px;
-        position: relative;
+        position: fixed;
         z-index: 2;
         overflow: hidden;
     }
